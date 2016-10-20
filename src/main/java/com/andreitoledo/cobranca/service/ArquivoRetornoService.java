@@ -18,12 +18,14 @@ import com.andreitoledo.cobranca.exception.ArquivoRetornoException;
 import com.andreitoledo.cobranca.model.Cobranca;
 import com.andreitoledo.cobranca.model.Status;
 import com.andreitoledo.cobranca.repository.Cobrancas;
-import com.andreitoledo.cobranca.util.jpa.Transactional;
 import com.andreitoledo.cobranca.util.retorno.bradesco.ArquivoRetorno;
 import com.andreitoledo.cobranca.util.retorno.bradesco.Cabecalho;
 import com.andreitoledo.cobranca.util.retorno.bradesco.Sumario;
 import com.andreitoledo.cobranca.util.retorno.bradesco.TransacaoTitulo;
+import javax.ejb.Stateless;
+import javax.transaction.Transactional;
 
+@Stateless
 public class ArquivoRetornoService {
 
 	@Inject

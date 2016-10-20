@@ -6,15 +6,23 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import com.andreitoledo.cobranca.model.Cedente;
+import javax.persistence.PersistenceContext;
 
 public class Cedentes implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Inject
-	private EntityManager manager;
+    @PersistenceContext(unitName = "boletoCobrancaPU")
+    private EntityManager manager;
 
-	public Cedente porCodigo(Long codigo) {
-		return this.manager.find(Cedente.class, codigo);
-	}
+    public Cedente guardar(Cedente cedente) {
+        return manager.merge(cedente);
+    }
+
+    public Cedente porCodigo(Long codigo) {
+        System.out.println("Cedente porCodigo:" + codigo);
+
+        return this.manager.find(Cedente.class, codigo);
+    }
+
 }

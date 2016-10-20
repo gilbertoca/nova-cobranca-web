@@ -7,8 +7,10 @@ import javax.inject.Inject;
 import com.andreitoledo.cobranca.model.Cobranca;
 import com.andreitoledo.cobranca.model.Status;
 import com.andreitoledo.cobranca.repository.Cobrancas;
-import com.andreitoledo.cobranca.util.jpa.Transactional;
+import javax.ejb.Stateless;
+import javax.transaction.Transactional;
 
+@Stateless
 public class NovaCobrancaService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
