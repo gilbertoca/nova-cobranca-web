@@ -3,7 +3,6 @@ package com.andreitoledo.cobranca.util.retorno.bradesco;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import org.jboss.weld.exceptions.IllegalArgumentException;
 import org.jrimum.texgit.Record;
 
 public class TransacaoTitulo {

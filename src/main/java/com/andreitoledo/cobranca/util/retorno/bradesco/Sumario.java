@@ -2,7 +2,6 @@ package com.andreitoledo.cobranca.util.retorno.bradesco;
 
 import java.math.BigDecimal;
 
-import org.jboss.weld.exceptions.IllegalArgumentException;
 import org.jrimum.texgit.Record;
 
 public class Sumario {
