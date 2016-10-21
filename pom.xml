@@ -29,21 +29,39 @@
                 <groupId>org.apache.tomee.maven</groupId>
                 <artifactId>tomee-embedded-maven-plugin</artifactId>
                 <version>${tomee-embedded-maven-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.tomee</groupId>
+                        <artifactId>tomee-embedded</artifactId>
+                        <version>${tomee-embedded-maven-plugin.version}</version>
+                    </dependency>                    
+                    <dependency>
+                        <groupId>org.apache.tomee</groupId>
+                        <artifactId>openejb-jpa-integration</artifactId>
+                        <version>${tomee-embedded-maven-plugin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.tomee</groupId>
+                        <artifactId>openejb-core-eclipselink</artifactId>
+                        <version>${tomee-embedded-maven-plugin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.eclipse.persistence</groupId>
+                        <artifactId>eclipselink</artifactId>
+                        <version>2.6.3</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.hibernate</groupId>
+                        <artifactId>hibernate-validator</artifactId>
+                        <version>5.2.4.Final</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jboss.logging</groupId>
+                        <artifactId>jboss-logging</artifactId>
+                        <version>3.3.0.Final</version>
+                    </dependency>
+                </dependencies>
             </plugin>
-            <plugin>
-                <groupId>org.apache.openjpa</groupId>
-                <artifactId>openjpa-maven-plugin</artifactId>
-                <version>2.4.1</version>
-                <executions>
-                    <execution>
-                        <id>enhancer</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>enhance</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>            
         </plugins>
     </build>
 
