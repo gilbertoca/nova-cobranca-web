@@ -45,9 +45,6 @@ public class NovaCobrancaBean implements Serializable {
 
 	public void emitir() {
 		Cedente cedente = cedentes.porCodigo(1L);
-                
-                System.out.println("CEEEEE DENNNTEEEEEEEEEEEEEEE" + cedente);
-                
 		cobranca = novaCobrancaService.salvar(cobranca);
 		
 		byte[] pdf = this.emissorBoleto.gerarBoleto(cedente, cobranca);

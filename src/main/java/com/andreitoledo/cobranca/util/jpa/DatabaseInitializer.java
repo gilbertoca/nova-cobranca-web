@@ -24,7 +24,7 @@ public class DatabaseInitializer {
 
     @PostConstruct
     public void init() {
-        
+        //activate the DDL generation
         this.manager.find(Cedente.class, 1L);
         
         try (Connection connection = dataSource.getConnection()) {
@@ -32,8 +32,8 @@ public class DatabaseInitializer {
             Statement statement = connection.createStatement();
 
             // insert the data
-            statement.executeUpdate("INSERT INTO conta_bancaria " + "VALUES (1010, '0', 2020, '0', 6)");
-            statement.executeUpdate("INSERT INTO cedente " + "VALUES ('AT Systems, Solução em Desenvolvimento de Sistemas', '55.947.373/0001-66', 1)");
+            statement.executeUpdate("insert into conta_bancaria (codigo, agencia, digito_agencia, numero, digito_conta, codigo_carteira) values (1,1010, '0', 2020, '0', 6);");
+            statement.executeUpdate("insert into cedente (codigo, nome, cnpj, codigo_conta_bancaria) values (1,'AT Systems, Solução em Desenvolvimento de Sistemas', '55.947.373/0001-66', 1);");
 
         } catch (SQLException e) {
             System.err.println("Got an exception! ");
