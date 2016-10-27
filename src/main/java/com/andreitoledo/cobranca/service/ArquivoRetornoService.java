@@ -23,7 +23,6 @@ import com.andreitoledo.cobranca.util.retorno.bradesco.Cabecalho;
 import com.andreitoledo.cobranca.util.retorno.bradesco.Sumario;
 import com.andreitoledo.cobranca.util.retorno.bradesco.TransacaoTitulo;
 import javax.ejb.Stateless;
-import javax.transaction.Transactional;
 
 @Stateless
 public class ArquivoRetornoService {
@@ -31,7 +30,6 @@ public class ArquivoRetornoService {
 	@Inject
 	private Cobrancas cobrancas;
 	
-	@Transactional
 	public List<String> carregar(String fileName, InputStream inputstream) throws ArquivoRetornoException {
 		ArquivoRetorno arquivoRetorno = criarArquivoRetorno(fileName, inputstream);
 		

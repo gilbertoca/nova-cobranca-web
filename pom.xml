@@ -29,7 +29,8 @@
                 <groupId>org.apache.tomee.maven</groupId>
                 <artifactId>tomee-embedded-maven-plugin</artifactId>
                 <version>${tomee-embedded-maven-plugin.version}</version>
-                <dependencies>
+                <!-- configurar o eclipselink ao invés do OpenJPA
+                dependencies>
                     <dependency>
                         <groupId>org.apache.tomee</groupId>
                         <artifactId>tomee-embedded</artifactId>
@@ -60,7 +61,7 @@
                         <artifactId>jboss-logging</artifactId>
                         <version>3.3.0.Final</version>
                     </dependency>
-                </dependencies>
+                </dependencies-->
             </plugin>
         </plugins>
     </build>

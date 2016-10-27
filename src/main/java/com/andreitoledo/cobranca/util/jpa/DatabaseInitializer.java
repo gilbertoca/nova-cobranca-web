@@ -24,6 +24,7 @@ public class DatabaseInitializer {
 
     @PostConstruct
     public void init() {
+        //Workaround for pre JPA 2.1
         //activate the DDL generation
         this.manager.find(Cedente.class, 1L);
         
