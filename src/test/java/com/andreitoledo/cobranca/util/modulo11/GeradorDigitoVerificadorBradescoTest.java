@@ -5,15 +5,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.andreitoledo.cobranca.util.modulo11.GeradorDigitoVerificador;
 
-public class GeradorDigitoVerificadorTest {
+public class GeradorDigitoVerificadorBradescoTest {
 	
-	private GeradorDigitoVerificador gerador;
+	private GeradorDigitoVerificadorBradesco gerador;
 
 	@Before
 	public void init() {
-		this.gerador = new GeradorDigitoVerificador();
+		this.gerador = new GeradorDigitoVerificadorBradesco();
 	}
 	
 	@Test

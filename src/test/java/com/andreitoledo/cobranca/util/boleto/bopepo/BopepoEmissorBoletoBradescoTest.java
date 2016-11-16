@@ -1,6 +1,5 @@
 package com.andreitoledo.cobranca.util.boleto.bopepo;
 
-import java.awt.Desktop;
 import java.io.File;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,17 +12,18 @@ import com.andreitoledo.cobranca.model.Cobranca;
 import com.andreitoledo.cobranca.model.ContaBancaria;
 import com.andreitoledo.cobranca.model.Sacado;
 import com.andreitoledo.cobranca.util.boleto.EmissorBoleto;
-import com.andreitoledo.cobranca.util.modulo11.GeradorDigitoVerificador;
+import com.andreitoledo.cobranca.util.modulo11.GeradorDigitoVerificadorBradesco;
 import static org.junit.Assert.assertTrue;
 
-public class BopepoEmissorBoletoTest {
+public class BopepoEmissorBoletoBradescoTest {
 
     private EmissorBoleto emissorBoleto;
+    private static final String BOLETO_PDF = "boletoBradesco.pdf";
 
     @Before
     public void init() {
-        GeradorDigitoVerificador geradorDigitoVerificador = new GeradorDigitoVerificador();
-        emissorBoleto = new BopepoEmissorBoleto(geradorDigitoVerificador);
+        GeradorDigitoVerificadorBradesco geradorDigitoVerificador = new GeradorDigitoVerificadorBradesco();
+        emissorBoleto = new BopepoEmissorBoletoBradesco(geradorDigitoVerificador);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class BopepoEmissorBoletoTest {
         sacado.setNome("Maria Santos");
         cobrancaSistema.setSacado(sacado);
 
-        File boleto = this.emissorBoleto.gerarBoletoEmArquivo("boletoTeste1.pdf", cedenteSistema, cobrancaSistema);
+        File boleto = this.emissorBoleto.gerarBoletoEmArquivo(BOLETO_PDF, cedenteSistema, cobrancaSistema);
         
         assertTrue(boleto.exists());
         boleto.deleteOnExit();

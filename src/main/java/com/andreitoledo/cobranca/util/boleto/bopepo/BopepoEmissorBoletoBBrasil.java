@@ -20,16 +20,16 @@ import org.jrimum.domkee.financeiro.banco.febraban.Titulo.Aceite;
 
 import com.andreitoledo.cobranca.model.Cobranca;
 import com.andreitoledo.cobranca.util.boleto.EmissorBoleto;
-import com.andreitoledo.cobranca.util.modulo11.GeradorDigitoVerificador;
+import com.andreitoledo.cobranca.util.modulo11.GeradorDigitoVerificadorBBrasil;
 
-public class BopepoEmissorBoleto implements EmissorBoleto {
+public class BopepoEmissorBoletoBBrasil implements EmissorBoleto {
 
 	private static final long serialVersionUID = 1L;
 	
-	private GeradorDigitoVerificador geradorDigitoVerificador;
+	private GeradorDigitoVerificadorBBrasil geradorDigitoVerificador;
 	
 	@Inject
-	public BopepoEmissorBoleto(GeradorDigitoVerificador geradorDigitoVerificador) {
+	public BopepoEmissorBoletoBBrasil(GeradorDigitoVerificadorBBrasil geradorDigitoVerificador) {
 		this.geradorDigitoVerificador = geradorDigitoVerificador;
 	}
 
@@ -64,7 +64,7 @@ public class BopepoEmissorBoleto implements EmissorBoleto {
 	}
 	
 	private ContaBancaria criarContaBancaria(com.andreitoledo.cobranca.model.Cedente cedenteSistema) {
-		ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_BRADESCO.create());
+		ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_DO_BRASIL.create());
 		Integer agencia = cedenteSistema.getContaBancaria().getAgencia();
 		String digitoAgencia = cedenteSistema.getContaBancaria().getDigitoAgencia();
 		Integer numeroConta = cedenteSistema.getContaBancaria().getNumero();
@@ -72,7 +72,6 @@ public class BopepoEmissorBoleto implements EmissorBoleto {
 		contaBancaria.setAgencia(new Agencia(agencia, digitoAgencia));
 		contaBancaria.setNumeroDaConta(new NumeroDaConta(numeroConta, digitoConta));
 		contaBancaria.setCarteira(new Carteira(cedenteSistema.getContaBancaria().getCodigoCarteira()));
-		
 		return contaBancaria;
 	}
 	
