@@ -1,4 +1,4 @@
-package com.andreitoledo.cobranca.controller;
+package cobranca.view;
 
 
 import javax.enterprise.context.RequestScoped;
