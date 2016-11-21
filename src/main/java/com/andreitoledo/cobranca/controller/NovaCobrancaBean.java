@@ -35,6 +35,7 @@ public class NovaCobrancaBean implements Serializable {
 	@Inject
 	private NovaCobrancaService novaCobrancaService;
 	
+	@Inject
 	private EmissorBoleto emissorBoleto;
 
 	public void inicializar() {

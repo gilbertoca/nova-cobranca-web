@@ -2,7 +2,7 @@ package com.andreitoledo.cobranca.util.modulo11;
 
 import java.io.Serializable;
 
-public class GeradorDigitoVerificadorBBrasil implements Serializable{
+public class GeradorDigitoVerificador implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
